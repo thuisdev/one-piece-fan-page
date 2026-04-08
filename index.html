@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Piece Tribute Webpage</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#characters">Characters</a>
+        <a href="#plot">Plot</a>
+        <a href="#scenes">Scenes</a>
+    </nav>
+
+    <header id="hero">
+        <div class="marquee">
+            <h1>
+                <span>O</span>
+                <span>n</span>
+                <span>e</span>
+                <span> </span>
+                <span>P</span>
+                <span>i</span>
+                <span>e</span>
+                <span>c</span>
+                <span>e</span>
+            </h1>
+        </div>
+        <h2>The Tribute to Nika</h2>
+        <p>"People's dreams never die." -- Whitebeard</p>
+    </header>
+
+
+
+    <section id="characters">
+        <h2>Legends of the Sea</h2>
+        
+        <div class="cards-container">
+            <div class="character-card">
+                <img src="images/zoro.jpg" alt="zoro">
+                <h3>Roronoa Zoro</h3>
+                <p class="fact">Aims to be the World's Greatest Swordsman</p>
+            </div>
+
+            <div class="character-card">
+                <img src="images/luffy.jpg" alt="luffy">
+                <h3>Monkey D. Luffy</h3>
+                <p class="fact">His true power is the Sun God Nika</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="plot">
+        <h2>The Hidden Truth</h2>
+        <p>Imu is the mysterious ruler sitting on the Empty Throne, 
+        secretly controlling the World Government from the shadows. 
+        The existence of Imu is hidden from the world — 
+        a truth so dangerous that those who discover it are erased.</p>
+    </section>
+    
+    <section id="scenes">
+        <h2>Legendary Moments</h2>
+        <p>In Impel Down, Bentham sacrificed himself to open the 
+        Gates of Justice for Luffy and the others to escape. 
+        He stayed behind, alone, knowing he would never leave. 
+        One of the most emotional moments in One Piece.
+        </p>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ for One Piece — The Will of D. lives on.</p>
+    </footer>
+    <img src="images/logo.png" class="fixed-logo">
+
+    <script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+});
+
+document.querySelectorAll('#plot, #scenes').forEach(el => {
+    observer.observe(el);
+});
+</script>
+</body>
+</html>

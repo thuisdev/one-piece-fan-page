@@ -1,0 +1,227 @@
+@font-face {
+    font-family: "Pirata One";
+    src: url(PirataOne-Regular.ttf);
+}
+body {
+    background-color:black;
+    color: white;   
+    font-family: "Pirata One";
+}
+
+#hero {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     text-align: center;
+     height: 100vh;
+     background-image: url("images/background.jpg");
+     background-repeat: no-repeat;
+     background-size:cover;
+     background-position: center;
+     text-shadow:5px 5px 10px black ;
+    }
+
+
+#hero h1 {
+    font-size: 140px;
+    margin: 0;
+}
+
+
+#hero h1 span:nth-child(1) { animation-delay: 0s; }
+#hero h1 span:nth-child(2) { animation-delay: 0.1s; }
+#hero h1 span:nth-child(3) { animation-delay: 0.2s; }
+#hero h1 span:nth-child(4) { animation-delay: 0.3s; }
+#hero h1 span:nth-child(5) { animation-delay: 0.4s; }
+#hero h1 span:nth-child(6) { animation-delay: 0.5s; }
+#hero h1 span:nth-child(7) { animation-delay: 0.6s; }
+#hero h1 span:nth-child(8) { animation-delay: 0.7s; }
+#hero h1 span:nth-child(9) { animation-delay: 0.8s; }
+
+@keyframes wave {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+#hero h1 span {
+    display: inline-block;
+    animation: wave 1s ease-in-out infinite;
+}
+
+#hero h2 {
+    font-size: 60px;
+    margin-top: 10px;
+}
+
+#hero p {
+    font-size: 40px;
+    margin-top: 0;
+}
+
+#characters {
+    padding: 40px;
+}
+
+.cards-container {
+    display:flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.character-card {
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.character-card img {
+    width: 1000px;
+    height: 600px;
+    object-fit: cover;
+}
+
+#characters h2 {
+    text-align: center;
+    font-size: 60px;
+    margin: 0;
+}
+
+.character-card h3 {
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin: 0;
+    border: 3px solid white;
+    border-radius: 10px;
+    
+}
+
+.fact {
+   opacity: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: gold;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    font-size: 20px;
+    margin: 3px;
+}
+
+.character-card:hover .fact {
+    opacity: 1;
+}
+
+#plot {
+    color: white;
+    padding: 3px solid white;
+    text-align: center;
+    border-bottom: 3px solid red;
+    border-top: 3px solid red;
+}
+
+#scenes {
+    color: white;
+    padding: 3px solid white;
+    text-align: center;
+    border-bottom: 3px solid red;
+}
+
+#plot h2 {
+    font-size: 30px;
+}
+
+#scenes h2 {
+    font-size: 30px;
+}
+
+#plot p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+#scenes p {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+footer {
+    background-color: #0a0a0a;
+    color: #888;
+    text-align: center;
+    padding: 40px;
+    border-top: 2px solid #333;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 20px;
+    z-index: 999;
+}
+
+nav a {
+    color: gold;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.fixed-logo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #hero h1 {
+        font-size: 60px;
+    }
+
+    #hero h2 {
+        font-size: 30px;
+    }
+}
+
+#plot, #scenes {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+
+    color: white;
+    text-align: center;
+    border-bottom: 3px solid red;
+}
+
+#plot {
+    border-top: 3px solid red;
+}
+
+#plot.visible, #scenes.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
